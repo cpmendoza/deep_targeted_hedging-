@@ -1,0 +1,13 @@
+agent:
+
+    # First layer of parameters - Hedged portfolio composition
+    batch_size       : 10000                 # batch size 
+    nbs_units        : 56                    # neurons per layer/cell
+    lr               : 0.00005               # learning rate of the Adam optimizer
+    dropout_par      : 0.5                   # dropout regularization parameter 
+    epochs           : 1000                  # Number of epochs, training iterations
+
+    # Second layer of parameters
+    display_plot     : False                 # Display plot of training and validation loss 
+
+

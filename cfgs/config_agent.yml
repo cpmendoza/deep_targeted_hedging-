@@ -1,0 +1,19 @@
+agent:
+
+    # First layer of parameters - Hedged portfolio composition
+    hedging : "contribution"   #Hedge contribution or risk allocation {'contribution','allocation'}
+
+    # Second layer of parameters 
+    network          : "FFNN"                # Neural network architecture {"LSTM","RNNFNN","FFNN"}
+    batch_size       : 1000                  # batch size {296,1000}
+    nbs_units        : 56                    # neurons per layer/cell
+    lr               : 0.00005               # learning rate of the Adam optimizer
+    dropout_par      : 0.5                   # dropout regularization parameter 
+    riskaversion     : 0.95                  # CVaR confidence level (0,1)
+    epochs           : 50                    # Number of epochs, training iterations
+    penalization     : 0                     # Include local CVaR penalization:1 not to include penalization:0
+
+    # Third layer of parameters
+    display_plot     : False                 # Display plot of training and validation loss 
+
+

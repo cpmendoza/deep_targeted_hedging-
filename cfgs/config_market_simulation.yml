@@ -1,0 +1,41 @@
+simulation:
+
+    # The market parameters are borrowed from Godin et al. (2023)
+
+    # General parameters
+    num_simulations : 101000  # Number of simulated paths
+    dynamics : 'P'            # Define if the simulation will be done under the physical (P) or risk neutral (Q) measure
+    time_steps : 240          # Number of rebalancing steps
+
+    # Parameters of the function for risk free rate
+    x_init : [-0.0689664, -0.00619378, 0.09397286] # Initial values for the term structure
+    dynamic_risk_free_rate : True                  # Dynamic evolution of the risk-free rate
+    floor_risk_free_rate : True                    # Determine if the risk-free rate needs to be bounded
+    lower_bound : -0.0075                          # Lower bound for the risk-free rate
+
+    # Parameters of the function for equity
+    mixed_fund : True                              # Type of fund {True: assumption fund, False: RBC fund}
+    h_values : [(0.1412**2)/12,(0.1785**2)/12]     # Initial values for two equity components
+    h_values_f : [(0.00898**2)/12,(0.04158**2)/12] # Initial values RBC and Assumption Fund
+
+    # Parameters of the function for mortality risk
+    x : 55                        # Age in months
+    A_0 : 1                       # Initial account value
+    F_0 : 1                       # Initial underlying fund value
+    epsilon : None                # Value to estimate derivatives using differentiation methods
+    G_0 : 1                       # Guaranteed amount
+    ratchet_provision : False     # Inclusion of ratchet provision 
+    rate : 0.15                   # Rate for ratchet provison
+    u_t : -64.73868               # Initial systemic mortality factor
+
+    # Parameters for future contracts
+    n : 3        # Maturity of hedging instruments
+    S_0 : 1      # Initial value of hedging instruments
+
+    # Replicability
+    seed : 42    #Seed to ensure replicability 
+
+
+
+
+
