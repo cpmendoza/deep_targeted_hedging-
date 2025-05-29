@@ -65,7 +65,7 @@ pip install -r requirements.txt
 
 4. **Running the script**: We provide two options to run the deep targeted hedging pipeline:
 
-- Option 1.  The two main components of the pipeline can be executed independently by following the examples provided in `cvar_pipeline.ipynb` and `deep_hedging_pipeline.ipynb`, both located in the `notebooks` folder. Please execute them in this order, as the deep agent requires the CVaR ANN for training. These notebooks already outline the training of the CVaR ANN and the performance metrics of the RL-CVaR agent (without local risk penalization), as shown in Table 2 of our paper F. Godin (2025).
+- Option 1.  The two main components of the pipeline can be executed independently by following the examples provided in `cvar_pipeline.ipynb` and `deep_hedging_pipeline.ipynb`, both located in the `notebooks` folder. Please execute them in this order, as the deep agent requires the CVaR ANN for training. These notebooks already outline the training of the CVaR ANN and the performance metrics of the RL-CVaR agent (without local risk penalization), as shown in Table 3 of our paper F. Godin (2025).
 
 - Option 2. As an alternative to running the notebooks, the pipeline can be executed directly from the terminal by running the corresponding functions in each `.py` file, as indicated within the scripts.
 
