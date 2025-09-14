@@ -243,7 +243,7 @@ class DeepAgent(object):
             #Minimize the distance bewteen the portfolio value and the contribution
             self.local_var = tf.reduce_mean(tf.nn.relu(self.cvar_history))
             self.hedging_err = tf.nn.relu(-1*(self.contribution + self.equity))
-            self.loss =  tf.reduce_mean(self.hedging_err) + (tf.reduce_mean(tf.square(self.rate)) + tf.reduce_mean(tf.square(self.mortality)) + tf.reduce_mean(tf.square(self.time))) + self.penalization*self.local_var 
+            self.loss =  tf.math.sqrt(tf.reduce_mean(self.hedging_err)) + tf.math.sqrt(tf.reduce_mean(tf.square(self.rate))) + tf.math.sqrt(tf.reduce_mean(tf.square(self.mortality))) + tf.math.sqrt(tf.reduce_mean(tf.square(self.time))) + self.penalization*self.local_var 
 
         # 8) SGD step with the adam optimizer
         optimizer  = tf.train.AdamOptimizer(learning_rate = self.lr)
